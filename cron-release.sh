@@ -43,9 +43,8 @@ function repoTag() {
 	COMMITTAG="$((COMMITTAG+1))"
 	#Re-add r part to tag
 	PUSHTAG="r${COMMITTAG}"
-	#Now we make the tag
-	TIME='date %s'
-	git tag "$PUSHTAG" -m "This is an auto-generated tag at $TIME since the Epoch (1 Jan 1970 00:00 UTC). Also this annotation only exists to ensure the script works."
+	#Now we make the tag. Note: Has to be annotated, or else git describe wont work. If you run this w/o an annotated tag as the last tag, it will not generate functional tags.
+	git tag "$PUSHTAG" -m "."
 }
 
 function repoPush() {
