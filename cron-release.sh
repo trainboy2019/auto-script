@@ -34,6 +34,6 @@ function repoPush() {
 }
 
 function cleanUp() {
-	cd ../
-	rm "$(basename ${REPOSITORY%.git})"
+	cd ../ || exit
+	rm -rf "$(basename ${REPOSITORY%.git})"
 }

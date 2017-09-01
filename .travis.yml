@@ -10,4 +10,5 @@ addons:
     - shellcheck
 
 script:
+- cp variables.conf.example variables.conf
 - bash -c 'shellcheck -x cron-release.sh'
