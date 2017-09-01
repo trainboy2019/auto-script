@@ -9,6 +9,8 @@ addons:
     packages:
     - shellcheck
 
-script:
+before_script:
 - cp variables.conf.example variables.conf
+
+script:
 - bash -c 'shellcheck -x cron-release.sh'

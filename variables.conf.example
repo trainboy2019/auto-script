@@ -3,4 +3,3 @@ REPOSITORY="" #Set this to a remote git repository, properly configured for Trav
 API_KEY="" #Set this to a github API key. The key should have public_repo permissions.
 USERNAME="" #Set this to your git name.
 EMAIL="" #Set this to your git email
-LA

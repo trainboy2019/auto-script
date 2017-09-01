@@ -1,5 +1,23 @@
 #!/bin/bash
-# (c) 2017 Valentijn "ev1l0rd"
+# cron-release.sh - Automates freeShop cache updates.
+# Copyright (C) 2017 - Valentijn "Ev1l0rd"
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+
+function showLicense() {
+	printf "This program comes with ABSOLUTELY NO WARRANTY;
+		This is free software, and you are welcome to redistribute it
+		under certain conditions. For more details see the LICENSE file"
+}
 
 function envVars() {
 	if [ ! -f variables.conf ]; then
@@ -37,3 +55,10 @@ function cleanUp() {
 	cd ../ || exit
 	rm -rf "$(basename ${REPOSITORY%.git})"
 }
+
+showLicense
+envVars
+repoClone
+repoTag
+repoPush
+cleanUp
