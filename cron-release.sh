@@ -42,9 +42,10 @@ function repoTag() {
 	#Increase tag by 1
 	COMMITTAG="$((COMMITTAG+1))"
 	#Re-add r part to tag
-	COMITTAG="r$COMITTAG"
+	PUSHTAG="r${COMMITTAG}"
 	#Now we make the tag
-	git tag "$COMITTAG"
+	TIME='date %s'
+	git tag "$PUSHTAG" -m "This is an auto-generated tag at $TIME since the Epoch (1 Jan 1970 00:00 UTC). Also this annotation only exists to ensure the script works."
 }
 
 function repoPush() {
