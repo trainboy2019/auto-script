@@ -10,4 +10,4 @@ addons:
     - shellcheck
 
 script:
-- bash -c 'shellcheck -x soundcloud.sh'
+- bash -c 'shellcheck -x cron-release.sh'
